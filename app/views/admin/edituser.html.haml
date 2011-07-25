@@ -1,0 +1,28 @@
+%br
+- @url = "/admin/updateuser/" + @user.userid.to_s()
+= form_for (:post, :action => @url, :id => 'edituserform') do
+  %table{:cellspacing=>"1", :cellpadding=>"8", :border=>"0", :width=>"500px", :style=>"border:solid 1px #088253"}
+    %tr{:class=>"hdtr"}
+      %td{:colspan=>"2", :align=>"center"}
+        User details
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          First Name:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtfname', :id=>'txtfname', :style=>"width:150px", :value=>@user.fname
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Last Name:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtlname', :id=>'txtlname', :style=>"width:150px", :value=>@user.lname
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Email Address:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtemail', :id=>'txtemail', :style=>"width:250px", :value=>@user.email
+    %tr{:class=>"bgtr"}
+      %td{:colspan=>"2", :align=>"center"}
+        = submit "Update", :style=>"width:100px", :name=>"btnupdate", :id=>"btnupdate", :class=>"button"

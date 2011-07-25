@@ -1,0 +1,82 @@
+- username =''
+- fname = ''
+- lname = ''
+- email = ''
+%h2
+  Registration Form
+- if @showerrors!=nil
+  %table{:cellspacing=>"0", :cellpadding=>"5", :width=>"350px", :style=>"margin-left:-150px;border:solid 2px #AF2B0A"}
+    %tr{:class=>"hdtrerrors"}
+      %td
+        OOPS!! Some errors have occured, please correct them
+    -@showerrors.full_messages.each do |e|
+      %tr{:class=>"trerror"}
+        %td
+          = e
+  %br
+= form_for (:post, :action => url('register'), :id => 'registerform', :multipart => true) do
+  %table{:cellspacing=>"1", :cellpadding=>"8", :border=>"0", :width=>"500px", :style=>"border:solid 1px #088253"}
+    %tr{:class=>"hdtr"}
+      %td{:colspan=>"2", :align=>"center"}
+        %b
+          Fields marked with * from mandatory
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Enter a Username:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtusername', :id=>'txtusername', :style=>"width:150px", :value=>"#@username"
+        %b
+          *
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Enter a Password:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = password_field :name=>'txtpassword', :id=>'txtpassword', :style=>"width:150px"
+        %b
+          *
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Confirm Password:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = password_field :name=>'txtconfirmpassword', :id=>'txtconfirmpassword', :style=>"width:150px"
+        %b
+          *
+    %tr{:class=>"bgtr"}
+      %td{:colspan=>"2", :align=>"center"}
+        &nbsp;
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Enter Your First Name:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtfname', :id=>'txtfname', :style=>"width:150px", :value=>"#@fname"
+        %b
+          *
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Enter Your Last Name:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtlname', :id=>'txtlname', :style=>"width:150px", :value=>"#@lname"
+        %b
+          *
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Enter Your Email Address:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = text_field :name=>'txtemail', :id=>'txtemail', :style=>"width:250px", :value=>"#@email"
+        %b
+          *
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Upload Image:&nbsp;&nbsp;&nbsp;
+      %td{:width=>"60%", :align=>"left"}
+        = file_field :name => :datafile, :id => "datafile"
+    %tr{:class=>"bgtr"}
+      %td{:colspan=>"2", :align=>"center"}
+        = submit "Register", :style=>"width:100px", :name=>"btnsubmit", :id=>"btnsubmit", :class=>"button"

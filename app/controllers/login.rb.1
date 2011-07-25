@@ -1,0 +1,26 @@
+class Login < Application
+
+  def index
+    render
+  end
+  
+  def signin
+    if params[:txtusername] && params[:txtpassword]
+      @username = params[:txtusername]
+      @password = params[:txtpassword]
+      @user = User.first(:username=>@username, :password=>@password)
+      if @user!=nil
+        session[:userauth] = true
+        session[:userid] = @user.userid
+        redirect "/profile/show"
+      else
+        @loginerror = "The entered username/password are incorrect"
+        #redirect "/login"
+        render
+      end
+    else
+      redirect "/login"
+    end
+  end
+  
+end

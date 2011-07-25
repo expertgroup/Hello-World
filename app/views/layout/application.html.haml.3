@@ -1,0 +1,31 @@
+!!! XML
+!!! 1.0 Transitional
+%html
+  %head
+    %title
+      This is a merb testing website
+    %link{:href=>"style.css", :rel=>"stylesheet", :type=>"text/css"}
+  %body{:style=>"margin:0px"}
+    %center
+      %table{:cellspacing=>"0", :cellpadding=>"0", :border=>"0", :style=>"width:1000px"}
+        %tr
+          %td{:align=>"center", :style=>"height:100px;background-color:#222222;border:solid 0px #8DB121;color:white"}
+            %h1{:style=>"font-family:Arial;font-size:30px"}
+              %i
+                %a{:href=>"/", :style=>"text-decoration:none"}
+                  ExpertMerb Website Demo
+        %tr
+          %td{:align=>"center", :style=>"height:800px", :valign=>"top"}
+            %table{:cellspacing=>"1", :cellpadding=>"5", :border=>"0", :width=>"90%", :style=>"background-color:white;height:800px"}
+              %tr
+                %td{:width=>"80%", :align=>"center", :valign=>"top", :style=>"background-color:#F7F7F4"}
+                  %br
+                  = catch_content
+                %td{:width=>"25%", :align=>"center", :valign=>"top",  :style=>"background-color:#E4E3E0"}
+                  %br
+                  %img{:src=>"images/banner.gif", :title=>"ExpertMerb", :alt=>"ExpertMerb", :border=>"0"}
+        %tr
+          %td{:align=>"center", :style=>"height:50px;background-color:#222222;border: solid 0px #8DB121;color:white"}
+            %b
+              %i
+                @Copyright ExpertMerb 2011

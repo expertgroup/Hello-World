@@ -1,0 +1,33 @@
+%h2
+  Signin Page
+%br
+- if @loginerror!=nil
+  %table{:cellspacing=>"0", :cellpadding=>"5", :width=>"350px", :style=>"margin-left:-150px;border:solid 2px #AF2B0A"}
+    %tr{:class=>"hdtrerrors"}
+      %td
+        OOPS!! Some errors have occured, please correct them
+    %tr{:class=>"trerror"}
+      %td
+        = @loginerror
+%br
+= form_for (:post, :action => url('login'), :id => 'signinform') do
+  %table{:cellspacing=>"1", :cellpadding=>"8", :border=>"0", :width=>"500px", :style=>"border:solid 1px #088253"}
+    %tr{:class=>"hdtr"}
+      %td{:colspan=>"2", :align=>"center"}
+        Please Enter the Signin Cerdentials
+    %tr{:class=>"bgtr"}
+      %td{:width=>"40%", :align=>"left"}
+        %font
+          Enter your username:&nbsp;&nbsp;&nbsp;
+        %td{:width=>"60%", :align=>"left"}
+          = text_field :name=>'txtusername', :id=>'txtusername', :style=>"width:150px"
+      %tr{:class=>"bgtr"}
+        %td{:width=>"40%", :align=>"left"}
+          %font
+            Enter your password:&nbsp;&nbsp;&nbsp;
+        %td{:width=>"60%", :align=>"left"}
+          = password_field :name=>'txtpassword', :id=>'txtpassword', :style=>"width:150px"
+      %tr{:class=>"bgtr"}
+        %td{:colspan=>"2", :align=>"center"}
+          = submit "Signin", :style=>"width:100px", :name=>"btnsignin", :id=>"btnsignin", :class=>"button"
+          

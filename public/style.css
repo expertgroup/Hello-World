@@ -1,0 +1,51 @@
+body {
+  font-family: Arial;
+  font-size: 14px;
+  background-color:#269168;
+}
+.bgtr
+{
+  background-color:#fff;
+  font-size:13px;
+  font-weight:bold
+}
+
+.hdtr
+{
+  background-color:#088253;
+  font-size:14px;
+  font-weight:bold;
+  color:#fff
+}
+
+.hdtrerrors
+{
+  background-color:#AF2B0A;
+  font-size:12px;
+  font-weight:bold;
+  color:#fff
+}
+
+.trerror
+{
+  background-color:#FEE47E;
+  font-size:11px;
+  font-weight:bold;
+  color:#AF2B0A  
+}
+
+.button
+{
+  background-color:#269168;
+  color:#ffffff;
+  font-size:13px;
+  font-weight:bold
+}
+
+.link
+{
+  color:#269168;
+  font-size:13px;
+  font-weight:bold;
+  text-decoration:none
+}

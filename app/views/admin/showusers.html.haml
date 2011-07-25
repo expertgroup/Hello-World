@@ -1,0 +1,47 @@
+%br
+%table{:cellspacing=>"1", :cellpadding=>"5", :border=>"0", :width=>"650px", :style=>"border:solid 1px #088253"}
+  %tr{:class=>"hdtr"}
+    %td{:colspan=>"6", :align=>"center"}
+      Listing of Registered users
+  %tr{:class=>"hdtr"}
+    %td{:width=>"5%", :align=>"left"}
+      %font
+        S.No
+    %td{:width=>"25%", :align=>"left"}
+      %font
+        Firstname
+    %td{:width=>"25%", :align=>"left"}
+      %font
+        Lastname
+    %td{:width=>"25%", :align=>"left"}
+      %font
+        Email Address
+    %td{:width=>"20%", :align=>"center", :colspan=>"2"}
+      %font
+        Action
+      - @i=1
+      - @users.each do |i|
+        %tr{:class=>"bgtr"}
+          %td{:width=>"5%", :align=>"left"}
+            %font
+              = @i.to_s() +"."
+          %td{:width=>"25%", :align=>"left"}
+            %font
+              = i.fname
+          %td{:width=>"25%", :align=>"left"}
+            %font
+              = i.lname
+          %td{:width=>"25%", :align=>"left"}
+            %font
+              = i.email
+          %td{:width=>"10%", :align=>"center"}
+            %font
+              - @href = "/admin/edituser/" + i.userid.to_s()
+              %a{:href=>@href, :class=>"link"}
+                Edit
+          %td{:width=>"10%", :align=>"center"}
+            %font
+              - @href = "/admin/deleteuser/" + i.userid.to_s()
+              %a{:href=>@href, :class=>"link"}
+                Delete
+        - @i = @i + 1

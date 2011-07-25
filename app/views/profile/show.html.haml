@@ -1,0 +1,45 @@
+- username = @user.username
+- fname = @user.fname
+- lname = @user.lname
+- email = @user.email
+- profilepic = "/profileimages/default.jpg"
+- if @user.profile_image!=nil
+  - profilepic = "/profileimages/" + @user.profile_image
+
+%table{:cellspacing=>"1", :cellpadding=>"3", :border=>"0", :style=>"width:600px"}
+  %tr
+    %td{:colspan=>"3", :align=>"right"}
+      %a{:href=>"/logout", :class=>"link"}
+        Logout
+      %br
+      %br
+  %tr{:class=>"hdtr"}
+    %td{:colspan=>"3", :align=>"center"}
+      Welcome to your Profile Page!!
+  %tr{:class=>"bgtr"}
+    %td{:colspan=>"3", :align=>"center"}
+      &nbsp;
+  %tr{:class=>"bgtr"}
+    %td{:align=>"center", :style=>"width:40%", :rowspan=>"4"}
+      %img{:src=>profilepic, :style=>"width:200px;height:150px;border:solid 1px #269168"}
+  %tr{:class=>"bgtr"}
+    %td{:align=>"left", :style=>"width:20%"}
+      %i
+        Username
+    %td{:align=>"left", :style=>"width:40%"}
+      = username
+  %tr{:class=>"bgtr"}
+    %td{:align=>"left", :style=>"width:20%"}
+      %i
+        Name
+    %td{:align=>"left", :style=>"width:40%"}
+      = fname + "&nbsp;" + lname
+  %tr{:class=>"bgtr"}
+    %td{:align=>"left", :style=>"width:20%"}
+      %i
+        Email Address
+    %td{:align=>"left", :style=>"width:40%"}
+      = email
+  %tr{:class=>"bgtr"}
+    %td{:colspan=>"3"}
+      &nbsp;
